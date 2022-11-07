@@ -1,6 +1,6 @@
 import numpy as np
-from keras.optimizers import Adam
-from keras import models
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras import models
 from sklearn import metrics
 from model import AWATT, AWATT_LAS, AWATT_SCL, LDF_AWATT, AWATT_LCL, \
     HATT, HATT_SCL, HATT_LCL, LDF_HATT, HATT_LAS
