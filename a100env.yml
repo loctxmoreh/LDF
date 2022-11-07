@@ -1,0 +1,16 @@
+name: ldf
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python=3.8
+  - cudatoolkit=11.2
+  - cudnn=8.1.0
+  - pip
+  - pip:
+    - tensorflow==2.8.0
+    - protobuf==3.13.0
+    - scikit-learn
+    - numpy
+    - pandas
+    - openpyxl
