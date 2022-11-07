@@ -40,7 +40,8 @@ if __name__ == '__main__':
     extra_parameter = {'alpha': 0.1, 'temp': 0.1}
     # alpha means the λ in our paper, which is the weight of the CL loss
     # temp is the temperature used in the label-weighted contrastive loss
-    seed_list = [5, 10, 15, 20, 25]
+    #seed_list = [5, 10, 15, 20, 25]
+    seed_list = [5, 10]
     # we take 5 runs where seed are set to 5, 10, 15, 20, 25
     model_list = ['LDF_AWATT']
     # you can choose one or multiple methods at one time
@@ -84,7 +85,7 @@ if __name__ == '__main__':
                     N = config[1]
                     K = config[2]
                     print('N: {}, K: {}, dataset: {}, seed: {} '.format(N, K, dataset, seed))
-                    result, one_seed_dict = train_and_test(B=B, N=N, K=K, Q=5, dataset=dataset, training_epoch=30,
+                    result, one_seed_dict = train_and_test(B=B, N=N, K=K, Q=5, dataset=dataset, training_epoch=1,
                                                            word_embedding_dim=50, seed=seed, early_stop=True,
                                                            patience=3, Em=2,
                                                            max_len=100, shuffle=True, threshold=0.3, trick=trick,
@@ -96,4 +97,4 @@ if __name__ == '__main__':
                 config_result['data'].append(seed_result)
             dataset_result['results'].append(config_result)
         whole_result.append(dataset_result)
-        pd.DataFrame(result_list).to_excel("/data1/zhaof/LDF/" + 'result.xlsx')
+        pd.DataFrame(result_list).to_excel('./result.xlsx')
