@@ -1,0 +1,5 @@
+*.hd5/
+__pycache__/
+*.xlsx
+tags
+word_embedding/
